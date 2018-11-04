@@ -42,7 +42,7 @@ php artisan nova:views resourceName viewName
 This will create your view component in /nova-components/views/resourceName. If you've installed the dependencies during the previous process, you can directly go ahead and use:
 
 ```
-cd /nova-components/views/resourceName && npm watch
+cd ./nova-components/views/resourceName && npm run watch
 ```
 
 Allowed values for viewName are [index || lens || detail || create || update || attach || update-attached]
