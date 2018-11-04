@@ -11079,7 +11079,7 @@ Nova.booting(function (Vue, router) {
         if (globalViews.includes(to.name)) {
             customComponent = window.config["novaCustom" + to.name.charAt(0).toUpperCase() + to.name.slice(1)];
         } else {
-            customComponent = resourceCustomViews[to.name] ? resourceCustomViews[to.name]['name'] : null;
+            customComponent = resourceCustomViews && resourceCustomViews[to.name] ? resourceCustomViews[to.name]['name'] : null;
         }
         if (customComponent && Vue.options.components[customComponent]) {
             next({
