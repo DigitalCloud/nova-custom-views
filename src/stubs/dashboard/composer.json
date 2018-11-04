@@ -1,0 +1,29 @@
+{
+    "name": "nova-custom-views/custom-dashboard",
+    "description": "A Laravel Nova custom dashboard.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NovaCustomViews\\CustomDashboard\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NovaCustomViews\\CustomDashboard\\CustomDashboardServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

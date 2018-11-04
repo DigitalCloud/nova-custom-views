@@ -1,0 +1,25 @@
+<?php
+
+namespace NovaCustomViews\Custom404;
+
+use Laravel\Nova\Nova;
+use Laravel\Nova\Events\ServingNova;
+use Illuminate\Support\Str;
+use Illuminate\Support\ServiceProvider;
+
+class Custom404ServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Nova::serving(function (ServingNova $event) {
+            Nova::provideToScript(['novaCustom404' => 'custom-404']);
+            Nova::script('nova-custom-404', __DIR__.'/../dist/js/views.js');
+            Nova::style('nova-custom-404', __DIR__.'/../dist/css/views.css');
+        });
+    }
+}

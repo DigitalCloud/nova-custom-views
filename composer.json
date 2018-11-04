@@ -1,0 +1,24 @@
+{
+    "name": "devmtm/nova-custom-views",
+    "description": "A Laravel Nova custom views.",
+    "authors": [{
+        "name": "Motaz Marouf",
+        "email": "dev.mmarouf@hotmail.com"
+    }],
+    "keywords": [
+        "laravel",
+        "nova",
+        "custom views"
+    ],
+    "license": "MIT",
+    "require": {
+        "laravel/nova": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "devmtm\\NovaCustomViews\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
