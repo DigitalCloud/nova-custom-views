@@ -60,7 +60,7 @@ This will create a new path: '/nova-components/views/user' which contains all ge
 The new view is extended the default user nova detail view (using  vue mixins). 
 You can modify the default view by going to the path: '/nova-components/views/user/resources/js/views/Detail.vue' and add your custom code as the following:
 ```
-<template>
-<div>YOUR_CODE_HERE<div>
-</template>
+   <template>
+      <div>YOUR_CODE_HERE<div>
+   </template>
 ```
