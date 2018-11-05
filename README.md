@@ -50,3 +50,17 @@ Allowed values for viewName are [index || lens || detail || create || update || 
 If you dont provide viewName, it will create all available nova views.
 
 You can modify any view component inside /nova-components/views/resourceName/resources/js/views as you like
+
+# Example Usage
+To create detail view, say for user resource, you can run the command:
+```
+php artisan nova:views user detail
+```
+This will create a new path: '/nova-components/views/user' which contains all generated user views.
+The new view is extended the default user nova detail view (using  vue mixins). 
+You can modify the default view by going to the path: '/nova-components/views/user/resources/js/views/Detail.vue' and add your custom code as the following:
+<pre>
+<template>
+<div>YOUR_CODE_HERE<div>
+</template>
+ </pre>
