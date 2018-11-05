@@ -45,14 +45,14 @@ This will create your view component in /nova-components/views/resourceName. If 
 cd ./nova-components/views/resourceName && npm run watch
 ```
 
-Allowed values for viewName are [index || lens || detail || create || update || attach || update-attached]
+Allowed values for viewName are [index | lens | detail | create | update | attach | update-attached]
 
-If you dont provide viewName, it will create all available nova views.
+If you dont provide viewName, it will create all previous nova views.
 
-You can modify any view component inside /nova-components/views/resourceName/resources/js/views as you like
+You can modify any view component inside /nova-components/views/resourceName/resources/js/views
 
 # Example Usage
-To create detail view, say for user resource, you can run the command:
+To create a new view, say user detail view, you can run the command:
 ```
 php artisan nova:views user detail
 ```
@@ -60,7 +60,7 @@ This will create a new path: '/nova-components/views/user' which contains all ge
 The new view is extended the default user nova detail view (using  vue mixins). 
 You can modify the default view by going to the path: '/nova-components/views/user/resources/js/views/Detail.vue' and add your custom code as the following:
 ```
-   <template>
-      <div>YOUR_CODE_HERE<div>
-   </template>
+<template>
+   <div>YOUR_CODE_HERE<div>
+</template>
 ```
