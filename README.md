@@ -1,6 +1,6 @@
 
 # Nova Custom Views
-This package allows you to define entirely customizable views for specific Nova Resources.
+This package allows you to create customizable views for specific Nova resources.
 
 # Installation 
 
