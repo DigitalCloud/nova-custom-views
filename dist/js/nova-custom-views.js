@@ -11072,7 +11072,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 Nova.booting(function (Vue, router) {
     router.beforeEach(function (to, from, next) {
-        console.log(to.name);
         var customComponent = null;
         var resourceCustomViews = window.config.novaCustomViews ? window.config.novaCustomViews[to.params.resourceName] : null;
         var globalViews = ['dashboard', '403', '404'];
