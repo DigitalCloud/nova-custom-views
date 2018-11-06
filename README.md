@@ -51,11 +51,8 @@ If you dont provide viewName, it will create all previous nova views.
 
 You can modify any view component inside /nova-components/views/resourceName/resources/js/views
 
-<<<<<<< HEAD
 # Example Usage: Creating custom detail view for user resource
-=======
-# Example Usage
->>>>>>> 536d723f81dc1c2787d426522255e8b11bafa3f0
+
 To create a new view, say user detail view, you can run the command:
 ```
 php artisan nova:views user detail
@@ -68,7 +65,6 @@ You can modify the default view by going to the path: '/nova-components/views/us
    <div>YOUR_CODE_HERE<div>
 </template>
 ```
-<<<<<<< HEAD
 
 # Example Usage: Creating Custom Dashboard
 To create a custom dashboard view, you can run the command:
@@ -83,5 +79,3 @@ You can modify the dashboard view by going to the path: '/nova-components/views/
    <div>YOUR_CODE_HERE<div>
 </template>
 ```
-=======
->>>>>>> 536d723f81dc1c2787d426522255e8b11bafa3f0
