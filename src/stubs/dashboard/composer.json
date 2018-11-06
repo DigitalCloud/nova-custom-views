@@ -1,5 +1,5 @@
 {
-    "name": "nova-custom-views/custom-dashboard",
+    "name": "nova-custom-views/dashboard-view",
     "description": "A Laravel Nova custom dashboard.",
     "keywords": [
         "laravel",
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "NovaCustomViews\\CustomDashboard\\": "src/"
+            "NovaCustomViews\\DashboardView\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "NovaCustomViews\\CustomDashboard\\CustomDashboardServiceProvider"
+                "NovaCustomViews\\DashboardView\\DashboardViewServiceProvider"
             ]
         }
     },

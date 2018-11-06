@@ -37,13 +37,13 @@ class DashboardViewCommand extends Command
         }
 
         (new Filesystem)->copyDirectory(
-            __DIR__ . '/stubs/dashboard',
+            __DIR__ . '/../stubs/dashboard',
             $this->viewsPath()
         );
 
         (new Filesystem)->move(
-            $this->viewsPath().'/src/CustomDashboardServiceProvider.stub',
-            $this->viewsPath().'/src/CustomDashboardServiceProvider.php'
+            $this->viewsPath().'/src/DashboardViewServiceProvider.stub',
+            $this->viewsPath().'/src/DashboardViewServiceProvider.php'
         );
 
         // Register the views...
@@ -97,7 +97,7 @@ class DashboardViewCommand extends Command
     {
         $composer = json_decode(file_get_contents(base_path('composer.json')), true);
 
-        $composer['require']['nova-custom-views/custom-dashboard'] = '*';
+        $composer['require']['nova-custom-views/dashboard-view'] = '*';
 
         file_put_contents(
             base_path('composer.json'),
@@ -114,8 +114,8 @@ class DashboardViewCommand extends Command
     {
         $package = json_decode(file_get_contents(base_path('package.json')), true);
 
-        $package['scripts']['build-custom-dashboard'] = 'cd '.$this->relativeViewsPath().' && npm run dev';
-        $package['scripts']['build-custom-dashboard'.'-prod'] = 'cd '.$this->relativeViewsPath().' && npm run prod';
+        $package['scripts']['build-dashboard-view'] = 'cd '.$this->relativeViewsPath().' && npm run dev';
+        $package['scripts']['build-dashboard-view'.'-prod'] = 'cd '.$this->relativeViewsPath().' && npm run prod';
 
         file_put_contents(
             base_path('package.json'),

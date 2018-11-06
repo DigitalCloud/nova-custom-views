@@ -11071,8 +11071,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router_routes__ = __webpack_require__(42);
 
 Nova.booting(function (Vue, router) {
-    router.addRoutes(__WEBPACK_IMPORTED_MODULE_0__router_routes__["a" /* default */]);
     router.beforeEach(function (to, from, next) {
+        console.log(to.name);
         var customComponent = null;
         var resourceCustomViews = window.config.novaCustomViews ? window.config.novaCustomViews[to.params.resourceName] : null;
         var globalViews = ['dashboard', '403', '404'];
@@ -11091,6 +11091,7 @@ Nova.booting(function (Vue, router) {
             next();
         }
     });
+    router.addRoutes(__WEBPACK_IMPORTED_MODULE_0__router_routes__["a" /* default */]);
 });
 
 /***/ }),
