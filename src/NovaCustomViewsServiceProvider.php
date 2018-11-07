@@ -27,6 +27,6 @@ class NovaCustomViewsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands([ViewsCommand::class, DashboardViewCommand::class, Error403ViewCommand::class, Error404ViewCommand::class, ViewCommand::class]);
+        $this->commands([ViewsCommand::class, DashboardViewCommand::class, Error403ViewCommand::class, Error404ViewCommand::class]);
     }
 }
