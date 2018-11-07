@@ -37,7 +37,7 @@ class Error403ViewCommand extends Command
         }
 
         (new Filesystem)->copyDirectory(
-            __DIR__ . '/stubs/403',
+            __DIR__ . '/../stubs/403',
             $this->viewsPath()
         );
 
