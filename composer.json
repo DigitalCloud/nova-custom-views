@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "DigitalCloud\\NovaCustomViews\\": "src/"
+            "devmtm\\NovaCustomViews\\": "src/"
         }
     },
     "minimum-stability": "dev",
