@@ -1,5 +1,5 @@
 {
-    "name": "devmtm/nova-custom-views",
+    "name": "digitalcloud/nova-custom-views",
     "description": "A Laravel Nova custom views.",
     "authors": [{
         "name": "Motaz Marouf",
