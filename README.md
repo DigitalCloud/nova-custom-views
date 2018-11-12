@@ -5,7 +5,7 @@ This package allows you to create customizable views for specific Nova resources
 # Installation 
 
 ```
-composer require devmtm/nova-custom-views
+composer require digitalcloud/nova-custom-views
 ```
 
 Then you need to add the service provider to your config/app.php **after the NovaServiceProvider**:
