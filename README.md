@@ -1,3 +1,7 @@
+[![Latest Stable Version](https://poser.pugx.org/digitalcloud/nova-custom-views/v/stable)](https://packagist.org/packages/digitalcloud/nova-custom-views)
+[![Total Downloads](https://poser.pugx.org/digitalcloud/nova-custom-views/downloads)](https://packagist.org/packages/digitalcloud/nova-custom-views)
+[![Monthly Downloads](https://poser.pugx.org/digitalcloud/nova-custom-views/d/monthly)](https://packagist.org/packages/digitalcloud/nova-custom-views)
+[![Daily Downloads](https://poser.pugx.org/digitalcloud/nova-custom-views/d/daily)](https://packagist.org/packages/digitalcloud/nova-custom-views)
 
 # Nova Custom Views
 This package allows you to create customizable views for specific Nova resources.
