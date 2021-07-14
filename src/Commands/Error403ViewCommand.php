@@ -1,6 +1,6 @@
 <?php
 
-namespace devmtm\NovaCustomViews;
+namespace devmtm\NovaCustomViews\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
@@ -11,21 +11,21 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class DashboardViewCommand extends Command
+class Error403ViewCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'nova:dashboard';
+    protected $signature = 'nova:403';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new dashboard view';
+    protected $description = 'Create a new error 403 view';
 
     /**
      * Execute the console command.
@@ -39,13 +39,13 @@ class DashboardViewCommand extends Command
         }
 
         (new Filesystem)->copyDirectory(
-            __DIR__ . '/../stubs/dashboard',
+            __DIR__ . '/../stubs/403',
             $this->viewsPath()
         );
 
         (new Filesystem)->move(
-            $this->viewsPath().'/src/DashboardViewServiceProvider.stub',
-            $this->viewsPath().'/src/DashboardViewServiceProvider.php'
+            $this->viewsPath().'/src/Custom403ServiceProvider.stub',
+            $this->viewsPath().'/src/Custom403ServiceProvider.php'
         );
 
         // Register the views...
@@ -99,7 +99,7 @@ class DashboardViewCommand extends Command
     {
         $composer = json_decode(file_get_contents(base_path('composer.json')), true);
 
-        $composer['require']['nova-custom-views/dashboard-view'] = '*';
+        $composer['require']['nova-custom-views/custom-403'] = '*';
 
         file_put_contents(
             base_path('composer.json'),
@@ -116,8 +116,8 @@ class DashboardViewCommand extends Command
     {
         $package = json_decode(file_get_contents(base_path('package.json')), true);
 
-        $package['scripts']['build-dashboard-view'] = 'cd '.$this->relativeViewsPath().' && npm run dev';
-        $package['scripts']['build-dashboard-view'.'-prod'] = 'cd '.$this->relativeViewsPath().' && npm run prod';
+        $package['scripts']['build-custom-403'] = 'cd '.$this->relativeViewsPath().' && npm run dev';
+        $package['scripts']['build-custom-403'.'-prod'] = 'cd '.$this->relativeViewsPath().' && npm run prod';
 
         file_put_contents(
             base_path('package.json'),
@@ -192,7 +192,7 @@ class DashboardViewCommand extends Command
      */
     protected function viewsPath()
     {
-        return base_path('nova-components/views/dashboard');
+        return base_path('nova-components/views/403');
     }
 
     /**
@@ -202,7 +202,7 @@ class DashboardViewCommand extends Command
      */
     protected function relativeViewsPath()
     {
-        return 'nova-components/views/dashboard';
+        return 'nova-components/views/403';
     }
 
 }

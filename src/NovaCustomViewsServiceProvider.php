@@ -2,6 +2,10 @@
 
 namespace devmtm\NovaCustomViews;
 
+use devmtm\NovaCustomViews\Commands\DashboardViewCommand;
+use devmtm\NovaCustomViews\Commands\Error403ViewCommand;
+use devmtm\NovaCustomViews\Commands\Error404ViewCommand;
+use devmtm\NovaCustomViews\Commands\ViewsCommand;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Nova;

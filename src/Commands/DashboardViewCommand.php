@@ -1,6 +1,6 @@
 <?php
 
-namespace devmtm\NovaCustomViews;
+namespace devmtm\NovaCustomViews\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
@@ -11,21 +11,21 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Error404ViewCommand extends Command
+class DashboardViewCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'nova:404';
+    protected $signature = 'nova:dashboard';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new error 404 view';
+    protected $description = 'Create a new dashboard view';
 
     /**
      * Execute the console command.
@@ -39,13 +39,13 @@ class Error404ViewCommand extends Command
         }
 
         (new Filesystem)->copyDirectory(
-            __DIR__ . '/../stubs/404',
+            __DIR__ . '/../stubs/dashboard',
             $this->viewsPath()
         );
 
         (new Filesystem)->move(
-            $this->viewsPath().'/src/Custom404ServiceProvider.stub',
-            $this->viewsPath().'/src/Custom404ServiceProvider.php'
+            $this->viewsPath().'/src/DashboardViewServiceProvider.stub',
+            $this->viewsPath().'/src/DashboardViewServiceProvider.php'
         );
 
         // Register the views...
@@ -99,7 +99,7 @@ class Error404ViewCommand extends Command
     {
         $composer = json_decode(file_get_contents(base_path('composer.json')), true);
 
-        $composer['require']['nova-custom-views/custom-404'] = '*';
+        $composer['require']['nova-custom-views/dashboard-view'] = '*';
 
         file_put_contents(
             base_path('composer.json'),
@@ -116,8 +116,8 @@ class Error404ViewCommand extends Command
     {
         $package = json_decode(file_get_contents(base_path('package.json')), true);
 
-        $package['scripts']['build-custom-404'] = 'cd '.$this->relativeViewsPath().' && npm run dev';
-        $package['scripts']['build-custom-404'.'-prod'] = 'cd '.$this->relativeViewsPath().' && npm run prod';
+        $package['scripts']['build-dashboard-view'] = 'cd '.$this->relativeViewsPath().' && npm run dev';
+        $package['scripts']['build-dashboard-view'.'-prod'] = 'cd '.$this->relativeViewsPath().' && npm run prod';
 
         file_put_contents(
             base_path('package.json'),
@@ -192,7 +192,7 @@ class Error404ViewCommand extends Command
      */
     protected function viewsPath()
     {
-        return base_path('nova-components/views/404');
+        return base_path('nova-components/views/dashboard');
     }
 
     /**
@@ -202,7 +202,7 @@ class Error404ViewCommand extends Command
      */
     protected function relativeViewsPath()
     {
-        return 'nova-components/views/404';
+        return 'nova-components/views/dashboard';
     }
 
 }
