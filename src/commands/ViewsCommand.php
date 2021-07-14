@@ -9,6 +9,7 @@ use Laravel\Nova\Console\Concerns\AcceptsNameAndVendor;
 use Laravel\Nova\Nova;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class ViewsCommand extends Command
 {
