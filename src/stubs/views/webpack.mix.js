@@ -6,7 +6,8 @@ mix.setPublicPath('dist')
     .webpackConfig({
         resolve: {
             alias: {
-                '@nova': path.resolve(__dirname, '../../../vendor/laravel/nova/resources/js/')
+                '@nova': path.resolve(__dirname, '../../../vendor/laravel/nova/resources/js/'),
+                '@': path.resolve(__dirname, '../../../vendor/laravel/nova/resources/js/')
             }
         }
     })
