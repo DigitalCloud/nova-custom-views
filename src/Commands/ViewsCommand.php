@@ -1,6 +1,6 @@
 <?php
 
-namespace devmtm\NovaCustomViews;
+namespace devmtm\NovaCustomViews\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
@@ -9,6 +9,7 @@ use Laravel\Nova\Console\Concerns\AcceptsNameAndVendor;
 use Laravel\Nova\Nova;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class ViewsCommand extends Command
 {
@@ -180,7 +181,8 @@ class ViewsCommand extends Command
      */
     protected function installNpmDependencies()
     {
-        $this->runCommand('npm set progress=false && npm install', $this->viewsPath(), $this->output);
+        $this->runCommand(['npm', 'set', 'progress=false'], $this->viewsPath(), $this->output);
+        $this->runCommand(['npm', 'install'], $this->viewsPath(), $this->output);
     }
 
     /**
@@ -190,7 +192,7 @@ class ViewsCommand extends Command
      */
     protected function compile()
     {
-        $this->runCommand('npm run dev', $this->viewsPath(), $this->output);
+        $this->runCommand(['npm', 'run', 'dev'], $this->viewsPath(), $this->output);
     }
 
     /**
@@ -200,7 +202,7 @@ class ViewsCommand extends Command
      */
     protected function composerUpdate()
     {
-        $this->runCommand('composer update', getcwd(), $this->output);
+        $this->runCommand(['composer', 'update'], getcwd(), $this->output);
     }
 
     /**

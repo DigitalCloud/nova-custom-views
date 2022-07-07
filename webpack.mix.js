@@ -6,7 +6,8 @@ mix.js('resources/js/nova-custom-views.js', 'js')
     .webpackConfig({
         resolve: {
             alias: {
-                '@nova': path.resolve(__dirname, '../../vendor/laravel/nova/resources/js/')
+                '@nova': path.resolve(__dirname, '../../laravel/nova/resources/js/'),
+                '@': path.resolve(__dirname, '../../laravel/nova/resources/js/')
             }
         }
     })
